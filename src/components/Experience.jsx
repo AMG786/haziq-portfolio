@@ -45,6 +45,15 @@ export default function Experience() {
                   </li>
                 ))}
               </ul>
+              {job.tech?.length > 0 && (
+                <ul className="mt-5 flex flex-wrap gap-2" aria-label="Technologies used">
+                  {job.tech.map((t) => (
+                    <li key={t} className="tag">
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </Reveal>
         ))}

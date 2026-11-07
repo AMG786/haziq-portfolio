@@ -1,4 +1,4 @@
-import { FiCloud, FiCode, FiCpu, FiDatabase, FiServer, FiShield, FiSmartphone } from 'react-icons/fi'
+import { FiCloud, FiCode, FiCpu, FiDatabase, FiServer, FiShield, FiSmartphone, FiTerminal } from 'react-icons/fi'
 import { skillGroups } from '../data/portfolio'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
@@ -12,6 +12,7 @@ const icons = {
   cloud: FiCloud,
   ai: FiCpu,
   security: FiShield,
+  languages: FiTerminal,
 }
 
 export default function Skills() {
@@ -19,14 +20,14 @@ export default function Skills() {
     <section id="skills" className="section" aria-labelledby="skills-title">
       <SectionHeading number="02" eyebrow="Skills" title="What I work with" id="skills-title" />
 
-      <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {skillGroups.map((group, i) => {
           const Icon = icons[group.icon] ?? FiCode
           return (
             <Reveal
               as="li"
               key={group.title}
-              delay={(i % 3) * 0.08}
+              delay={(i % 4) * 0.08}
               className="card group p-6 transition-colors hover:border-accent-500/60"
             >
               <div className="flex items-center gap-3">

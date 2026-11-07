@@ -115,7 +115,7 @@ export default function Hero() {
             <a href="#projects" className="btn-primary">
               View My Work <FiArrowDown aria-hidden="true" />
             </a>
-            <a href={personal.resume} download className="btn-ghost">
+            <a href={personal.resume} download={personal.resumeFileName} className="btn-ghost">
               <FiDownload aria-hidden="true" /> Download Resume
             </a>
             <a href="#contact" className="btn-ghost">

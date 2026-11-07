@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────
 // All personal content lives here. Edit this file to update the
 // site — no need to touch the components.
-// Search for "TODO" to find everything that still needs real info.
+// Search for "TODO" to find anything that still needs real info.
 // ─────────────────────────────────────────────────────────────
 
 export const personal = {
@@ -14,15 +14,16 @@ export const personal = {
   location: 'Lahore, Pakistan',
   availability: 'Open to remote and on-site roles',
   photo: '/profile.webp', // set to '' to show the "HA" initials avatar instead
-  resume: '/resume.pdf', // TODO: add resume.pdf to the public/ folder
-  email: 'haziq@example.com', // TODO: real email
+  resume: '/resume.pdf',
+  resumeFileName: 'Haziq-Ali-Resume.pdf',
+  email: 'haziqali86@gmail.com',
   // TODO: create a free form at https://formspree.io and paste its ID (e.g. "xyzabcd").
   // While empty, the contact form opens the visitor's email app instead.
   formspreeId: '',
 }
 
 export const socials = {
-  github: 'https://github.com/your-username', // TODO: real GitHub URL
+  github: 'https://github.com/HaziqAli86',
   linkedin: 'https://www.linkedin.com/in/haziq-ali-bb147a261/',
   email: `mailto:${personal.email}`,
 }
@@ -44,9 +45,9 @@ export const about = [
 
 // Quick facts shown beside the About text
 export const highlights = [
-  { value: 'BS CS', label: 'FAST-NUCES' },
-  { value: 'Web + Mobile', label: 'Full-stack delivery' },
-  { value: 'AI', label: 'Fine-tuning & agents' },
+  { value: 'Fintech app', label: 'Shipped to production in KSA' },
+  { value: 'AWS Serverless', label: 'Lambda · Step Functions · EventBridge' },
+  { value: 'AI & RAG', label: 'Fine-tuning · LLaMA · Qwen' },
 ]
 
 // `icon` keys map to icons in components/Skills.jsx
@@ -54,29 +55,38 @@ export const skillGroups = [
   {
     title: 'Frontend',
     icon: 'frontend',
-    items: ['React', 'Next.js', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'Tailwind CSS'],
+    items: ['React', 'Next.js', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'Tailwind CSS', 'Micro-Frontends', 'Framer Motion'],
   },
-  { title: 'Mobile', icon: 'mobile', items: ['React Native'] },
+  { title: 'Mobile', icon: 'mobile', items: ['React Native', 'Android (Java)'] },
   {
     title: 'Backend',
     icon: 'backend',
-    items: ['Node.js', 'Express', 'REST APIs', 'Authentication'],
+    items: ['Node.js', 'Express', 'FastAPI', 'C# .NET', 'REST APIs', 'Authentication', 'Microservices'],
   },
-  { title: 'Databases', icon: 'database', items: ['MongoDB', 'Firebase'] },
+  {
+    title: 'Databases',
+    icon: 'database',
+    items: ['MongoDB', 'Firebase', 'SQL', 'Prisma', 'Redis'],
+  },
   {
     title: 'Cloud & DevOps',
     icon: 'cloud',
-    items: ['AWS', 'Git', 'GitHub', 'Docker', 'Vercel'],
+    items: ['AWS Lambda', 'Step Functions', 'EventBridge', 'EC2', 'S3', 'Jenkins', 'Docker', 'Git', 'GitHub', 'Vercel'],
   },
   {
     title: 'AI',
     icon: 'ai',
-    items: ['LLM integration', 'Model fine-tuning', 'AI agents for development'],
+    items: ['LLM integration', 'RAG', 'Model fine-tuning', 'LLaMA 3.1', 'Qwen 2.5', 'Flan-T5', 'Hugging Face', 'AI agents for development'],
   },
   {
-    title: 'Other',
+    title: 'Security & Tools',
     icon: 'security',
-    items: ['Information security', 'Client communication', 'Mentoring'],
+    items: ['Information security', 'Snyk', 'OSINT', 'Jira', 'Postman'],
+  },
+  {
+    title: 'Languages',
+    icon: 'languages',
+    items: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C/C++', 'C#'],
   },
 ]
 
@@ -86,13 +96,13 @@ export const experience = [
     company: 'Devsinc',
     type: 'Full-time',
     mode: 'On-site, Lahore',
-    period: 'Feb 2026 – Present', // TODO: set the real end month
+    period: 'Feb 2026 – Oct 2026',
     points: [
-      // TODO: replace with real achievements
-      'Built and shipped features across React/Next.js frontends and Node.js APIs for client products.',
-      'Improved page performance and code quality through reviews, refactoring and reusable components.',
-      'Collaborated with designers, QA and project managers in an agile team to deliver on schedule.',
+      'Built a production-grade trading fintech app for the Saudi market in React Native and TypeScript, including Nafath identity verification and bank account integrations, and took it through to production release.',
+      'Engineered AWS serverless workflows with Lambda, Step Functions and EventBridge to automate media processing (e.g. video aspect-ratio transforms), while maintaining legacy SWF across Production, QA and Dev.',
+      'Delivered features in an enterprise React micro-frontend architecture backed by BFF layers and C# .NET microservices in a monorepo; verified builds in Jenkins and fixed security issues flagged by Snyk.',
     ],
+    tech: ['React Native', 'TypeScript', 'AWS Lambda', 'Step Functions', 'React MFEs', 'C# .NET', 'Jenkins', 'Snyk'],
   },
   {
     role: 'AI Engineer',
@@ -102,67 +112,91 @@ export const experience = [
     period: 'Dec 2025 – Feb 2026',
     points: [
       'Worked on AI-driven systems, including applied model fine-tuning for real-world use cases.',
-      'Worked one-on-one with clients to turn their requirements into working solutions.',
+      'Worked one-on-one with clients to turn their requirements into working solutions, supporting users of SnapDev, an AI-powered full-stack app builder, with React, Next.js and FastAPI.',
+      'Debugged AI-generated code and cloud deployments, and fed recurring issues back to the product team to improve developer experience.',
+      'QA for a B2B AI and web platform, validating backend workflows built on Redis and Celery workers.',
     ],
+    tech: ['React', 'Next.js', 'FastAPI', 'Redis', 'Celery', 'QA'],
   },
   {
     role: 'Engineering Mentor',
     company: 'Ember AI Build Bootcamp',
     type: 'Mentorship',
     mode: 'Remote',
-    period: '2025', // TODO: exact dates
+    period: '2026', // TODO: exact dates
     points: [
       'Helped non-technical builders debug, understand the stack and deploy their prototypes.',
     ],
+    tech: [],
   },
 ]
 
-export const projectFilters = ['All', 'Web', 'Mobile', 'AI']
+export const projectFilters = ['All', 'Web', 'Mobile', 'AI', 'Security']
 
-// TODO: replace these sample projects with real ones.
-// Put screenshots in public/projects/ (a gradient placeholder shows if missing).
+// Put screenshots in public/projects/ using these file names
+// (a gradient placeholder shows automatically if an image is missing).
 export const projects = [
   {
-    title: 'AI Support Assistant',
+    title: 'CaseMate',
     description:
-      'A chat assistant fine-tuned on company docs that answers customer questions and hands off to a human when unsure.',
-    tech: ['Next.js', 'Node.js', 'OpenAI API', 'MongoDB'],
-    image: '/projects/ai-assistant.png',
+      "AI legal assistant for Pakistan's laws that gives pre-litigation guidance and case insights. Uses RAG with OpenAI models and LLaMA 3.1 8B, plus document analysis and ready-made legal templates. Final-year project.",
+    tech: ['Next.js', 'FastAPI', 'Python', 'RAG', 'LLaMA 3.1', 'MongoDB', 'Firebase'],
+    image: '/projects/casemate.png',
     live: '',
-    github: '',
-    category: 'AI',
+    github: 'https://github.com/HaziqAli86/Casemate',
+    categories: ['AI', 'Web'],
   },
   {
-    title: 'Task Manager Web App',
+    title: 'SneakerHub',
     description:
-      'A full-stack productivity app with authentication, real-time updates and a clean, responsive dashboard.',
-    tech: ['React', 'Express', 'MongoDB', 'Tailwind CSS'],
-    image: '/projects/task-manager.png',
-    live: '',
-    github: '',
-    category: 'Web',
+      'Production-ready e-commerce platform with secure sign-in, Stripe payments, automatic order-confirmation emails and an admin dashboard.',
+    tech: ['Next.js', 'TypeScript', 'Prisma', 'MongoDB', 'Stripe', 'Clerk', 'Resend'],
+    image: '/projects/sneakerhub.png',
+    live: '', // TODO: live link if deployed
+    github: '', // TODO: repo link if public
+    categories: ['Web'],
   },
   {
-    title: 'Fitness Tracker App',
+    title: 'LexiBot',
     description:
-      'A cross-platform mobile app to log workouts, track progress with charts and sync data across devices.',
-    tech: ['React Native', 'Firebase', 'Expo'],
-    image: '/projects/fitness-tracker.png',
+      'General-purpose AI chatbot with a smooth, animated UI, deployed across AWS EC2, Cloudflare and Vercel with models from Hugging Face.',
+    tech: ['Next.js', 'FastAPI', 'Framer Motion', 'AWS EC2', 'Hugging Face', 'MongoDB'],
+    image: '/projects/lexibot.png',
+    live: 'https://lexi-bot-navy.vercel.app',
+    github: 'https://github.com/HaziqAli86/LexiBot',
+    categories: ['AI', 'Web'],
+  },
+  {
+    title: 'CareHub',
+    description:
+      'Android app connecting doctors and patients: appointment requests with doctor approval, real-time chat, availability management and scheduling filters.',
+    tech: ['Java', 'Android', 'Firebase Auth', 'Firestore', 'Cloudinary'],
+    image: '/projects/carehub.png',
     live: '',
-    github: '',
-    category: 'Mobile',
+    github: '', // TODO: repo link if public
+    categories: ['Mobile'],
+  },
+  {
+    title: 'OSINT & Vulnerability Scanner',
+    description:
+      'Automated security assessment tool that combines Nmap port scanning, live CVE lookups from the NVD API and OSINT gathering with theHarvester into one report.',
+    tech: ['Python', 'Nmap', 'NVD API', 'theHarvester'],
+    image: '/projects/osint-tool.png',
+    live: '',
+    github: 'https://github.com/HaziqAli86/OSINT-and-Vulnerability-Assessment-Tool',
+    categories: ['Security'],
   },
 ]
 
 export const education = [
   {
     degree: 'BS Computer Science',
-    school: 'National University of Computer and Emerging Sciences (FAST-NUCES)',
+    school: 'National University of Computer and Emerging Sciences (FAST-NUCES), Lahore',
     period: 'Sep 2021 – Dec 2025',
   },
   {
     degree: 'A Levels, Pre-Engineering',
-    school: 'The City School',
+    school: 'The City School, Sahiwal Campus',
     period: 'Aug 2019 – Aug 2021',
   },
 ]

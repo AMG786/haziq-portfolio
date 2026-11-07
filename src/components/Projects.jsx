@@ -53,7 +53,8 @@ function ProjectLink({ href, label, icon: Icon, title }) {
 
 export default function Projects() {
   const [filter, setFilter] = useState('All')
-  const visible = filter === 'All' ? projects : projects.filter((p) => p.category === filter)
+  const visible =
+    filter === 'All' ? projects : projects.filter((p) => p.categories.includes(filter))
 
   return (
     <section id="projects" className="section" aria-labelledby="projects-title">
@@ -97,7 +98,7 @@ export default function Projects() {
                 <div className="flex items-start justify-between gap-3">
                   <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{project.title}</h3>
                   <span className="shrink-0 font-mono text-xs text-slate-500 dark:text-slate-400">
-                    {project.category}
+                    {project.categories.join(' · ')}
                   </span>
                 </div>
                 <p className="mt-2 flex-1 text-sm leading-relaxed">{project.description}</p>
