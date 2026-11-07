@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Haziq Ali · Full-Stack Engineer</title>
+    <meta
+      name="description"
+      content="Haziq Ali is a full-stack engineer in Lahore building web, mobile and AI-powered products with React, Next.js, React Native and Node.js."
+    />
+    <meta name="author" content="Haziq Ali" />
+    <meta name="theme-color" content="#0a0e17" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Haziq Ali · Full-Stack Engineer" />
+    <meta
+      property="og:description"
+      content="Building web, mobile and AI-powered products, from first prototype to production."
+    />
+    <meta property="og:image" content="/profile.webp" />
+    <meta name="twitter:card" content="summary" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Apply saved theme before paint to avoid a flash -->
+    <script>
+      try {
+        if (localStorage.getItem('theme') === 'light') {
+          document.documentElement.classList.remove('dark')
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
