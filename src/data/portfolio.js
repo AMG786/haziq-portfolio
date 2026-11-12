@@ -115,20 +115,11 @@ export const experience = [
       'Worked one-on-one with clients to turn their requirements into working solutions, supporting users of SnapDev, an AI-powered full-stack app builder, with React, Next.js and FastAPI.',
       'Debugged AI-generated code and cloud deployments, and fed recurring issues back to the product team to improve developer experience.',
       'QA for a B2B AI and web platform, validating backend workflows built on Redis and Celery workers.',
+      'Engineering Mentor for the Ember AI Build Bootcamp: helped non-technical builders debug, understand the stack and deploy their prototypes.',
     ],
-    tech: ['React', 'Next.js', 'FastAPI', 'Redis', 'Celery', 'QA'],
+    tech: ['React', 'Next.js', 'FastAPI', 'Redis', 'Celery', 'QA', 'Mentoring'],
   },
-  {
-    role: 'Engineering Mentor',
-    company: 'Ember AI Build Bootcamp',
-    type: 'Mentorship',
-    mode: 'Remote',
-    period: '2026', // TODO: exact dates
-    points: [
-      'Helped non-technical builders debug, understand the stack and deploy their prototypes.',
-    ],
-    tech: [],
-  },
+  // To add more roles, copy one of the blocks above.
 ]
 
 export const projectFilters = ['All', 'Web', 'Mobile', 'AI', 'Security']
@@ -206,7 +197,7 @@ export const testimonials = [
     quote: 'You are a skilled engineer, teacher and cheerleader.',
     name: 'Christine Rimer',
     role: 'Founder at Rimer Leadership Advisory',
-    context: 'Ember AI Build Bootcamp',
+    context: 'Ember AI Build Bootcamp (Remotebase)',
   },
 ]
 
