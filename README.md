@@ -25,7 +25,7 @@ Search that file for `TODO` to find what still needs real information.
 | --- | --- |
 | Profile photo | `public/profile.webp` |
 | Resume | `public/resume.pdf` |
-| Project screenshots | `public/projects/*.png` (16:9 works best) |
+| Project screenshots | `public/projects/<project>/1.jpg, 2.jpg …` (first one is the card cover; list them in `images` in `portfolio.js`) |
 | Favicon | `public/favicon.svg` |
 
 ## Run locally

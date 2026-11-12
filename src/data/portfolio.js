@@ -122,17 +122,19 @@ export const experience = [
   // To add more roles, copy one of the blocks above.
 ]
 
-export const projectFilters = ['All', 'Web', 'Mobile', 'AI', 'Security']
+export const projectFilters = ['All', 'Web', 'Mobile', 'AI', 'Desktop', 'Security']
 
-// Put screenshots in public/projects/ using these file names
-// (a gradient placeholder shows automatically if an image is missing).
+// Screenshots live in public/projects/<folder>/. The first image is the card cover;
+// clicking a card's image opens all of them in a gallery.
+// `device: 'mobile'` shows phone screenshots side by side instead of cropping them.
+// A gradient placeholder shows automatically if a project has no images.
 export const projects = [
   {
     title: 'CaseMate',
     description:
-      "AI legal assistant for Pakistan's laws that gives pre-litigation guidance and case insights. Uses RAG with OpenAI models and LLaMA 3.1 8B, plus document analysis and ready-made legal templates. Final-year project.",
+      "AI legal assistant for Pakistan's laws that gives pre-litigation guidance and case insights. Uses RAG with OpenAI models and LLaMA 3.1 8B, plus a document analyzer and ready-made legal templates. Final-year project.",
     tech: ['Next.js', 'FastAPI', 'Python', 'RAG', 'LLaMA 3.1', 'MongoDB', 'Firebase'],
-    image: '/projects/casemate.png',
+    images: ['/projects/casemate/1.jpg', '/projects/casemate/2.jpg'],
     live: '',
     github: 'https://github.com/HaziqAli86/Casemate',
     categories: ['AI', 'Web'],
@@ -140,9 +142,15 @@ export const projects = [
   {
     title: 'SneakerHub',
     description:
-      'Production-ready e-commerce platform with secure sign-in, Stripe payments, automatic order-confirmation emails and an admin dashboard.',
+      'Production-ready sneaker store (live as "MyPlug") with size and category filters, cart with multiple delivery options, secure sign-in, Stripe payments, order-confirmation emails and admin controls.',
     tech: ['Next.js', 'TypeScript', 'Prisma', 'MongoDB', 'Stripe', 'Clerk', 'Resend'],
-    image: '/projects/sneakerhub.png',
+    images: [
+      '/projects/sneakerhub/1.jpg',
+      '/projects/sneakerhub/2.jpg',
+      '/projects/sneakerhub/3.jpg',
+      '/projects/sneakerhub/4.jpg',
+      '/projects/sneakerhub/5.jpg',
+    ],
     live: '', // TODO: live link if deployed
     github: '', // TODO: repo link if public
     categories: ['Web'],
@@ -150,9 +158,9 @@ export const projects = [
   {
     title: 'LexiBot',
     description:
-      'General-purpose AI chatbot with a smooth, animated UI, deployed across AWS EC2, Cloudflare and Vercel with models from Hugging Face.',
-    tech: ['Next.js', 'FastAPI', 'Framer Motion', 'AWS EC2', 'Hugging Face', 'MongoDB'],
-    image: '/projects/lexibot.png',
+      'General-purpose AI chatbot running Llama 3.1 8B with real-time document analysis and a smooth animated UI, deployed across AWS EC2, Cloudflare and Vercel.',
+    tech: ['Next.js', 'FastAPI', 'Llama 3.1', 'Framer Motion', 'AWS EC2', 'Hugging Face', 'MongoDB'],
+    images: ['/projects/lexibot/1.jpg', '/projects/lexibot/2.jpg'],
     live: 'https://lexi-bot-navy.vercel.app',
     github: 'https://github.com/HaziqAli86/LexiBot',
     categories: ['AI', 'Web'],
@@ -162,17 +170,34 @@ export const projects = [
     description:
       'Android app connecting doctors and patients: appointment requests with doctor approval, real-time chat, availability management and scheduling filters.',
     tech: ['Java', 'Android', 'Firebase Auth', 'Firestore', 'Cloudinary'],
-    image: '/projects/carehub.png',
+    images: [
+      '/projects/carehub/1.jpg',
+      '/projects/carehub/2.jpg',
+      '/projects/carehub/3.jpg',
+      '/projects/carehub/4.jpg',
+      '/projects/carehub/5.jpg',
+    ],
+    device: 'mobile',
     live: '',
     github: '', // TODO: repo link if public
     categories: ['Mobile'],
+  },
+  {
+    title: 'SAS Invoice System',
+    description:
+      'Desktop invoicing app built for SAS Crop Sciences. Smart fields that remember new customers, products and batches, auto-calculated totals, and a print-ready sale invoice / delivery challan with the amount in words.',
+    tech: ['Desktop app', 'Invoicing', 'Print layout'], // TODO: real tech stack
+    images: ['/projects/sas-invoice/1.jpg', '/projects/sas-invoice/2.jpg'],
+    live: '',
+    github: '',
+    categories: ['Desktop'],
   },
   {
     title: 'OSINT & Vulnerability Scanner',
     description:
       'Automated security assessment tool that combines Nmap port scanning, live CVE lookups from the NVD API and OSINT gathering with theHarvester into one report.',
     tech: ['Python', 'Nmap', 'NVD API', 'theHarvester'],
-    image: '/projects/osint-tool.png',
+    images: [],
     live: '',
     github: 'https://github.com/HaziqAli86/OSINT-and-Vulnerability-Assessment-Tool',
     categories: ['Security'],

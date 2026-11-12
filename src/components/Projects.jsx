@@ -1,38 +1,70 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { FiExternalLink, FiGithub } from 'react-icons/fi'
+import { FiExternalLink, FiGithub, FiImage } from 'react-icons/fi'
 import { projectFilters, projects } from '../data/portfolio'
+import ProjectGallery from './ProjectGallery'
 import SectionHeading from './SectionHeading'
 
-// Screenshot, or a gradient placeholder if the image is missing
-function ProjectImage({ project }) {
-  const [failed, setFailed] = useState(!project.image)
+// Gradient block shown when a project has no screenshots
+function Placeholder({ title }) {
+  return (
+    <div
+      className="grid aspect-video place-items-center bg-gradient-to-br from-accent-600 via-accent-700 to-cyan-glow"
+      role="img"
+      aria-label={`${title} preview placeholder`}
+    >
+      <span className="px-4 text-center font-mono text-lg font-semibold text-white/90">{title}</span>
+    </div>
+  )
+}
 
-  if (failed) {
-    return (
-      <div
-        className="grid aspect-video place-items-center bg-gradient-to-br from-accent-600 via-accent-700 to-cyan-glow"
-        role="img"
-        aria-label={`${project.title} preview placeholder`}
-      >
-        <span className="px-4 text-center font-mono text-lg font-semibold text-white/90">
-          {project.title}
-        </span>
-      </div>
-    )
-  }
+// Card cover: a cropped screenshot, or up to three phone screens side by side
+function ProjectCover({ project, onOpen }) {
+  const images = project.images ?? []
+  if (images.length === 0) return <Placeholder title={project.title} />
+
+  const isMobile = project.device === 'mobile'
 
   return (
-    <img
-      src={project.image}
-      alt={`Screenshot of ${project.title}`}
-      loading="lazy"
-      decoding="async"
-      width="640"
-      height="360"
-      onError={() => setFailed(true)}
-      className="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-105"
-    />
+    <button
+      type="button"
+      onClick={onOpen}
+      aria-label={`View ${images.length} screenshot${images.length > 1 ? 's' : ''} of ${project.title}`}
+      className="relative block aspect-video w-full cursor-zoom-in overflow-hidden bg-slate-100 dark:bg-ink-950"
+    >
+      {isMobile ? (
+        <div className="flex h-full items-end justify-center gap-3 bg-gradient-to-br from-accent-600 to-cyan-glow px-4 pt-5">
+          {images.slice(0, 3).map((src, i) => (
+            <img
+              key={src}
+              src={src}
+              alt=""
+              loading="lazy"
+              decoding="async"
+              className={`h-full w-auto rounded-t-xl border-4 border-b-0 border-ink-900 object-cover object-top shadow-xl transition-transform duration-500 group-hover:-translate-y-1 ${
+                i === 1 ? '' : 'hidden translate-y-3 min-[380px]:block'
+              }`}
+            />
+          ))}
+        </div>
+      ) : (
+        <img
+          src={images[0]}
+          alt={`Screenshot of ${project.title}`}
+          loading="lazy"
+          decoding="async"
+          width="640"
+          height="360"
+          className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+        />
+      )}
+
+      {images.length > 1 && (
+        <span className="absolute right-3 bottom-3 inline-flex items-center gap-1.5 rounded-lg bg-ink-950/75 px-2 py-1 font-mono text-xs text-white backdrop-blur">
+          <FiImage aria-hidden="true" /> {images.length}
+        </span>
+      )}
+    </button>
   )
 }
 
@@ -53,6 +85,7 @@ function ProjectLink({ href, label, icon: Icon, title }) {
 
 export default function Projects() {
   const [filter, setFilter] = useState('All')
+  const [open, setOpen] = useState(null) // project whose gallery is open
   const visible =
     filter === 'All' ? projects : projects.filter((p) => p.categories.includes(filter))
 
@@ -91,9 +124,7 @@ export default function Projects() {
               transition={{ duration: 0.25 }}
               className="card group flex flex-col overflow-hidden transition-all hover:-translate-y-1 hover:border-accent-500/60 hover:shadow-xl hover:shadow-accent-600/10"
             >
-              <div className="overflow-hidden">
-                <ProjectImage project={project} />
-              </div>
+              <ProjectCover project={project} onOpen={() => setOpen(project)} />
               <div className="flex flex-1 flex-col p-6">
                 <div className="flex items-start justify-between gap-3">
                   <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{project.title}</h3>
@@ -124,6 +155,10 @@ export default function Projects() {
       {visible.length === 0 && (
         <p className="text-center text-slate-500">No projects in this category yet.</p>
       )}
+
+      <AnimatePresence>
+        {open && <ProjectGallery key={open.title} project={open} onClose={() => setOpen(null)} />}
+      </AnimatePresence>
     </section>
   )
 }
