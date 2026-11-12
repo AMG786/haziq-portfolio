@@ -119,6 +119,35 @@ export const experience = [
     ],
     tech: ['React', 'Next.js', 'FastAPI', 'Redis', 'Celery', 'QA', 'Mentoring'],
   },
+  {
+    role: 'Full Stack Engineer',
+    company: 'Sultan Agro Sciences',
+    companyUrl: 'https://www.facebook.com/sultanagrosciences/',
+    logo: '/logos/sultan-agro.jpg',
+    type: 'Contract',
+    mode: 'Remote · Punjab, Pakistan',
+    period: 'Jun 2025 – Nov 2025',
+    points: [
+      'Built a desktop invoicing app for the company (SAS Crop Sciences, Vehari) to replace hand-written sale invoices and delivery challans.',
+      'Added smart fields that remember customers, areas, products and batch numbers, with automatic line totals and grand total.',
+      'Designed a print-ready invoice layout with the company letterhead, amount in words, signatures and terms, plus saved invoice, product and customer records.',
+    ],
+    tech: ['Desktop app', 'Full-stack development', 'Invoicing', 'Print layout'],
+  },
+  {
+    role: 'Full Stack Engineer',
+    company: 'Cosmic by Sabeela',
+    companyUrl: 'https://www.instagram.com/cosmicbysabeela/',
+    logo: '/logos/cosmic-by-sabeela.jpg',
+    type: 'Contract',
+    mode: 'Remote · Vehari, Pakistan',
+    period: 'Jan 2025 – Apr 2025',
+    points: [
+      "Designed and built the website for a bridal makeup studio in Vehari, presenting its services and a portfolio gallery of real brides' looks.",
+      'Delivered a responsive, elegant design that matches the brand and makes it easy for clients to get in touch and book.',
+    ],
+    tech: ['Website', 'Responsive design', 'Full-stack development'],
+  },
   // To add more roles, copy one of the blocks above.
 ]
 
@@ -185,7 +214,7 @@ export const projects = [
   {
     title: 'SAS Invoice System',
     description:
-      'Desktop invoicing app built for SAS Crop Sciences. Smart fields that remember new customers, products and batches, auto-calculated totals, and a print-ready sale invoice / delivery challan with the amount in words.',
+      'Desktop invoicing app built for Sultan Agro Sciences (SAS Crop Sciences, Vehari). Smart fields that remember new customers, products and batches, auto-calculated totals, and a print-ready sale invoice / delivery challan with the amount in words.',
     tech: ['Desktop app', 'Invoicing', 'Print layout'], // TODO: real tech stack
     images: ['/projects/sas-invoice/1.jpg', '/projects/sas-invoice/2.jpg'],
     live: '',
